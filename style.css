@@ -104,6 +104,12 @@ input{
 }
 
 .num{
+  display: none;
+  visibility: hidden;
+}
+
+.num.range{
+  visibility: visible;
   width:45px;
   display: flex;
   align-items: center;
@@ -128,4 +134,13 @@ input{
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
+}
+
+.addTudo{
+  padding: 10px 25px;
+  background-color: #007FFF;
+  border:none;
+  font-size: 20px;
+  color: #fff;
+  border-radius:2em;
 }

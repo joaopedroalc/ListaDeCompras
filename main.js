@@ -41,3 +41,10 @@ document.addEventListener('click', (el)=>{
     resultado.style.visibility = 'hidden'
   }
 })
+
+function addTudo(){
+  let num = document.querySelectorAll(".num")
+  num.forEach(numero => {
+    numero.classList.add("range")
+  })
+}
