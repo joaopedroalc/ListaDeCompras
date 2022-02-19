@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&display=swap');
+
+body{
+  background-color: #3142e0;
+  font-family: 'Caveat', cursive;
+  color: #fff;
+  font-size: 30px;
+}
+
+.carrinho{
+  display: block;
+  position:absolute;
+  top: 6%;
+  right: 6%;
+  width: 80px;
+  height: 80px;
+}
+
+.close{
+  display: none;
+  visibility: hidden;
+}
+
+.close.on{
+  visibility: visible;
+  display: block;
+  position:absolute;
+  top: 10%;
+  right: 6%;
+  width: 40px;
+  height: 40px;
+  z-index: 99999;
+}
+
+.lixeira{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.container{
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  flex-direction: column;
+}
+
+.itens{
+  display:grid;
+  grid-template-columns: 1fr;
+  width: 100vw;
+  justify-items: center;
+}
+
+.container-item{
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80vw;
+  margin: 2rem auto;
+}
+
+.itens-selecionados{
+  display:none;
+  visibility: hidden;
+}
+
+.itens-selecionados.active{
+  visibility: visible;
+  position:absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  flex-direction: column;
+}
+
+h3{
+  width: 100vw;
+  font-size:40px;
+}
+
+h2{
+  font-size: 64px;
+}
+
+input{
+  width: 30px;
+  height: 30px;
+  margin-left: 1rem;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2rem 0;
+}
+
+.num{
+  width:45px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin:0 5px;
+  font-size: 25px;
+}
+
+.qtde{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  margin-left: 1rem;
+}
+
+.adicionado{
+  margin-right:1rem;
+}
+
+.resultado{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
