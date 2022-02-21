@@ -2,14 +2,16 @@ const checkBoxs = document.querySelectorAll('.checkbox');
 const itensSelecionados = document.querySelector('.itens-selecionados')
 const divItens = document.querySelector('.itens-selecionados p')
 
-let itens = "";
-let marcado = false;
+let car = document.querySelector('.carrinho');
+let close = document.querySelector('.close');
+
+var itens = "";
+var saved = "";
 
 checkBoxs.forEach((checkbox) => {
-  const caixa = checkbox;
-  caixa.addEventListener('click', (el) =>{
+  checkbox.addEventListener('click', (el) => {
     marcado = false;
-    if(el.target.checked === true && marcado==false) {
+    if (el.target.checked === true && marcado == false) {
       itens = itens + `
       <div class="resultado">
         <span class="adicionado">${el.target.value}</span>
@@ -17,32 +19,39 @@ checkBoxs.forEach((checkbox) => {
         <img src="/assets/lixeira.png" class="lixeira"/>
       </div>`
 
-      divItens.innerHTML = itens;
+      if(itens != '') {
+        localStorage.setItem('itens', itens);
+        
+        saved = localStorage.getItem('itens');
+        
+        if (saved != '') {
+          divItens.innerHTML = saved;
+        }
+      }
+      console.log(localStorage.getItem('itens'))
     }
   })
 })
 
-let car = document.querySelector('.carrinho');
-let close = document.querySelector('.close');
 
 function carrinho() {
   itensSelecionados.classList.add('active')
   close.classList.add('on')
 }
 
-document.addEventListener('click', (el)=>{
-  if(el.target.classList.contains('close')){
+document.addEventListener('click', (el) => {
+  if (el.target.classList.contains('close')) {
     itensSelecionados.classList.remove('active')
     close.classList.remove('on')
   }
-  else if(el.target.classList.contains('lixeira')){
+  else if (el.target.classList.contains('lixeira')) {
     let resultado = el.target.parentNode
     resultado.style.display = 'none'
     resultado.style.visibility = 'hidden'
   }
 })
 
-function addTudo(){
+function addTudo() {
   let num = document.querySelectorAll(".num")
   num.forEach(numero => {
     numero.classList.add("range")

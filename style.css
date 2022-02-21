@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
 
 body{
   background-color: #3142e0;
-  font-family: 'Caveat', cursive;
+  font-family: 'EB Garamond', serif;
   color: #fff;
   font-size: 30px;
 }
@@ -100,7 +100,8 @@ input{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 2rem 0;
+  margin: 2rem 1rem;
+  border: 2px solid #ccc;
 }
 
 .num{
@@ -143,4 +144,58 @@ input{
   font-size: 20px;
   color: #fff;
   border-radius:2em;
+}
+
+@media (max-width: 480px) {
+  .carrinho{
+    display: block;
+    position:absolute;
+    top: 6%;
+    right: 8%;
+    width: 60px;
+    height: 60px;
+  }
+  h2{
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 4%;
+    left: 8%;
+  }
+  .itens{
+    margin: 5rem auto;
+  }
+  .container-item{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 2rem auto;
+  }
+  h3{
+    width: 90vw;
+    font-size:36px;
+    margin-left: 1rem;
+  }
+  .close.on{
+    right: 10%;
+  }
+  .itens-selecionados.active{
+    visibility: visible;
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: max-content;
+    padding: 4rem 0;
+    flex-direction: column;
+  }
 }
