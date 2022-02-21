@@ -58,6 +58,9 @@ body{
   flex-wrap: wrap;
   width: 80vw;
   margin: 2rem auto;
+  border: 3px solid #ccc;
+  padding: 1rem;
+  border-radius:1em;
 }
 
 .itens-selecionados{
@@ -102,6 +105,8 @@ input{
   justify-content: flex-start;
   margin: 2rem 1rem;
   border: 2px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .num{
@@ -147,6 +152,9 @@ input{
 }
 
 @media (max-width: 480px) {
+  header{
+  margin-bottom: 2rem;
+}
   .carrinho{
     display: block;
     position:absolute;
@@ -167,11 +175,7 @@ input{
     margin: 5rem auto;
   }
   .container-item{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 90vw;
+    width: 80vw;
     margin: 2rem auto;
   }
   h3{
@@ -197,5 +201,14 @@ input{
     height: max-content;
     padding: 4rem 0;
     flex-direction: column;
+  }
+  .item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1rem;
+    border: 2px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
   }
 }
