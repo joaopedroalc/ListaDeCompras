@@ -74,13 +74,14 @@ body{
   top: 0;
   right: 0;
   left: 0;
-  bottom: 0;
   z-index: 1000;
   background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
+  height: max-content;
+  padding: 4rem 0;
   flex-direction: column;
 }
 
@@ -185,22 +186,6 @@ input{
   }
   .close.on{
     right: 10%;
-  }
-  .itens-selecionados.active{
-    visibility: visible;
-    position:absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: max-content;
-    padding: 4rem 0;
-    flex-direction: column;
   }
   .item{
     display: flex;
