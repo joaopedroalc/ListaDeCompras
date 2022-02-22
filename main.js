@@ -10,8 +10,8 @@ var saved = "";
 
 checkBoxs.forEach((checkbox) => {
   checkbox.addEventListener('click', (el) => {
-    marcado = false;
-    if (el.target.checked === true && marcado == false) {
+    let check = el.target.checked;
+    if (check === true) {
       itens = itens + `
       <div class="resultado">
         <span class="adicionado">${el.target.value}</span>
@@ -28,8 +28,12 @@ checkBoxs.forEach((checkbox) => {
           divItens.innerHTML = saved;
         }
       }
-      console.log(localStorage.getItem('itens'))
-    }
+      el.target.classList.add('checked');
+    }if(el.target.classList.contains('checked') && check == false){
+        let resultado = el.target.parentNode
+        resultado.removeChild(el.target)
+        alert('O item continua no carrinho mas você não poderá adicionar esse item mais de uma vez')
+      }
   })
 })
 
