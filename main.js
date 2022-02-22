@@ -15,7 +15,7 @@ checkBoxs.forEach((checkbox) => {
       itens = itens + `
       <div class="resultado">
         <span class="adicionado">${el.target.value}</span>
-        <input type="number" name="numero" min="0" max="99" class="num" value="0">
+        <input type="number" name="numero" min="0" max="99" class="num" value="1">
         <img src="/assets/lixeira.png" class="lixeira"/>
       </div>`
 
@@ -28,10 +28,11 @@ checkBoxs.forEach((checkbox) => {
           divItens.innerHTML = saved;
         }
       }
+
       el.target.classList.add('checked');
     }if(el.target.classList.contains('checked') && check == false){
-        let resultado = el.target.parentNode
-        resultado.removeChild(el.target)
+        let box = el.target.parentNode
+        box.removeChild(el.target)
         alert('O item continua no carrinho mas você não poderá adicionar esse item mais de uma vez')
       }
   })
