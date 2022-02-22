@@ -152,6 +152,10 @@ input{
   border-radius:2em;
 }
 
+.itens-selecionados div{
+  margin: 2rem 0;
+}
+
 @media (max-width: 480px) {
   header{
   margin-bottom: 2rem;

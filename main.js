@@ -1,6 +1,6 @@
 const checkBoxs = document.querySelectorAll('.checkbox');
 const itensSelecionados = document.querySelector('.itens-selecionados')
-const divItens = document.querySelector('.itens-selecionados p')
+const divItens = document.querySelector('.itens-selecionados div')
 
 let car = document.querySelector('.carrinho');
 let close = document.querySelector('.close');
