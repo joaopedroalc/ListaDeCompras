@@ -55,8 +55,8 @@ function addProductToCart(label){
   checkBoxs.forEach((checkbox) => {
     checkbox.addEventListener('click', (el) => {
       let check = el.target.checked;
-      if (check === false) {
-      alert('Você adicionou esse item novamente ao carrinho, mas pode remover na lixeira')
+      if (check == false) {
+        el.target.classList.add('block')
       }
     })})
   
@@ -75,4 +75,5 @@ function addTudo() {
   num.forEach(numero => {
     numero.classList.add("range")
   })
+  alert('Caso existam produtos duplicados os remova')
 }
