@@ -143,6 +143,11 @@ input{
   margin: 1rem 0;
 }
 
+.block{
+  visibility: hidden;
+  display:none;
+}
+
 .addTudo{
   padding: 10px 25px;
   background-color: #007FFF;

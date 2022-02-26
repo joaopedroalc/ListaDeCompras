@@ -1,60 +1,74 @@
-const checkBoxs = document.querySelectorAll('.checkbox');
-const itensSelecionados = document.querySelector('.itens-selecionados')
-const divItens = document.querySelector('.itens-selecionados div')
+let carrinho = document.querySelector('.carrinho')
+let close = document.querySelector('.close')
+let itensSelecionados = document.querySelector('.itens-selecionados')
+let divContent = document.querySelector('.itens-selecionados div')
 
-let car = document.querySelector('.carrinho');
-let close = document.querySelector('.close');
-
-var itens = "";
-var saved = "";
-
-checkBoxs.forEach((checkbox) => {
-  checkbox.addEventListener('click', (el) => {
-    let check = el.target.checked;
-    if (check === true) {
-      itens = itens + `
-      <div class="resultado">
-        <span class="adicionado">${el.target.value}</span>
-        <input type="number" name="numero" min="0" max="99" class="num" value="1">
-        <img src="/assets/lixeira.png" class="lixeira"/>
-      </div>`
-
-      if(itens != '') {
-        localStorage.setItem('itens', itens);
-        
-        saved = localStorage.getItem('itens');
-        
-        if (saved != '') {
-          divItens.innerHTML = saved;
-        }
-      }
-
-      el.target.classList.add('checked');
-    }if(el.target.classList.contains('checked') && check == false){
-        let box = el.target.parentNode
-        box.removeChild(el.target)
-        alert('O item continua no carrinho mas você não poderá adicionar esse item mais de uma vez')
-      }
-  })
-})
-
-
-function carrinho() {
+carrinho.onclick = () => {
   itensSelecionados.classList.add('active')
   close.classList.add('on')
 }
 
-document.addEventListener('click', (el) => {
-  if (el.target.classList.contains('close')) {
-    itensSelecionados.classList.remove('active')
-    close.classList.remove('on')
+close.onclick = () => {
+  itensSelecionados.classList.remove('active')
+  close.classList.remove('on')
+}
+
+if(document.readyState == 'loading'){
+  document.addEventListener('DOMContentLoaded',ready)
+}else{
+  ready();
+}
+
+function ready(){
+  var lixeira = document.getElementsByClassName('lixeira')
+  for(var i = 0; i < lixeira.length;i++) {
+    var button = lixeira[i]
+    button.addEventListener('click', removeCartItem)
   }
-  else if (el.target.classList.contains('lixeira')) {
-    let resultado = el.target.parentNode
-    resultado.style.display = 'none'
-    resultado.style.visibility = 'hidden'
+
+  var checkboxs = document.getElementsByClassName('checkbox')
+  for(var i = 0;i<checkboxs.length;i++) {
+    var button = checkboxs[i]
+    button.addEventListener('click',addCartClicked)
   }
-})
+} 
+
+function addCartClicked(event){
+  var button = event.target
+  var item = button.parentElement
+  var label = item.getElementsByClassName('label')[0].innerHTML
+  addProductToCart(label)
+}
+
+var checkBoxs = document.querySelectorAll('.checkbox')
+
+function addProductToCart(label){
+  var divItens = document.createElement('div')
+  divItens.classList.add('resultado')
+  
+  var content = `
+  <span class="adicionado">${label}</span>
+  <input type="number" name="numero" min="0" max="99" class="num" value="1">
+  <img src="/assets/lixeira.png" class="lixeira"/>
+  `
+
+  checkBoxs.forEach((checkbox) => {
+    checkbox.addEventListener('click', (el) => {
+      let check = el.target.checked;
+      if (check === false) {
+      alert('Você adicionou esse item novamente ao carrinho, mas pode remover na lixeira')
+      }
+    })})
+  
+  divItens.innerHTML = content;
+  divContent.appendChild(divItens)
+  divItens.getElementsByClassName('lixeira')[0].addEventListener('click', removeCartItem)
+}
+
+function removeCartItem(event) {
+  var buttonClicked = event.target;
+  buttonClicked.parentElement.remove()
+}
 
 function addTudo() {
   let num = document.querySelectorAll(".num")
