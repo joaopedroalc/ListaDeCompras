@@ -38,6 +38,9 @@ function addCartClicked(event){
   var item = button.parentElement
   var label = item.getElementsByClassName('label')[0].innerHTML
   addProductToCart(label)
+
+  button.parentElement.style.display = 'none'
+  button.parentElement.style.overflow = 'hidden'
 }
 
 var checkBoxs = document.querySelectorAll('.checkbox')
@@ -66,8 +69,11 @@ function addProductToCart(label){
 }
 
 function removeCartItem(event) {
-  var buttonClicked = event.target;
-  buttonClicked.parentElement.remove()
+  let r = confirm("Tem certeza ? Se você remover esse item não poderá adiciona-lô novamente!");
+  if (r==true){
+      let buttonClicked = event.target;
+      buttonClicked.parentElement.remove()
+    }
 }
 
 function addTudo() {
