@@ -81,5 +81,4 @@ function addTudo() {
   num.forEach(numero => {
     numero.classList.add("range")
   })
-  alert('Caso existam produtos duplicados os remova')
 }
