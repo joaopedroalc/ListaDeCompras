@@ -20,36 +20,36 @@ if(document.readyState == 'loading'){
 }
 
 function ready(){
-  var lixeira = document.getElementsByClassName('lixeira')
-  for(var i = 0; i < lixeira.length;i++) {
-    var button = lixeira[i]
+  let lixeira = document.getElementsByClassName('lixeira')
+  for(let i = 0; i < lixeira.length;i++) {
+    let button = lixeira[i]
     button.addEventListener('click', removeCartItem)
   }
 
-  var checkboxs = document.getElementsByClassName('checkbox')
-  for(var i = 0;i<checkboxs.length;i++) {
-    var button = checkboxs[i]
+  let checkboxs = document.getElementsByClassName('checkbox')
+  for(let i = 0;i<checkboxs.length;i++) {
+    let button = checkboxs[i]
     button.addEventListener('click',addCartClicked)
   }
 } 
 
 function addCartClicked(event){
-  var button = event.target
-  var item = button.parentElement
-  var label = item.getElementsByClassName('label')[0].innerHTML
+  let button = event.target
+  let item = button.parentElement
+  let label = item.getElementsByClassName('label')[0].innerHTML
   addProductToCart(label)
 
   button.parentElement.style.display = 'none'
   button.parentElement.style.overflow = 'hidden'
 }
 
-var checkBoxs = document.querySelectorAll('.checkbox')
+let checkBoxs = document.querySelectorAll('.checkbox')
 
 function addProductToCart(label){
-  var divItens = document.createElement('div')
+  let divItens = document.createElement('div')
   divItens.classList.add('resultado')
   
-  var content = `
+  let content = `
   <span class="adicionado">${label}</span>
   <input type="number" name="numero" min="0" max="99" class="num" value="1">
   <img src="/assets/lixeira.png" class="lixeira"/>
