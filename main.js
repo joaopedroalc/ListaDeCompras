@@ -86,7 +86,7 @@ function adicionarProdutos(produtos) {
     </div>
     `;
   })
-  return itens
+  return itens.join('')
 }
 
 const todosMercearia = adicionarProdutos(mercearia)
