@@ -145,8 +145,15 @@ input{
 .resultado{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 1rem 0;
+  width: 20vw;
+}
+
+.divItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .block{
@@ -168,10 +175,10 @@ input{
 }
 
 .itens-selecionados div{
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   header{
   margin-bottom: 2rem;
 }
@@ -221,5 +228,17 @@ input{
     border-bottom: 2px solid #ccc;
     padding: 10px;
     border-radius: 0px;
+  }
+  .resultado{
+    width: 70vw;
+    border-bottom: 2px solid #ccc;
+  }
+
+  .resultado .adicionado{
+    font-size: 22px;
+  }
+
+  .resultado .lixeira{
+    margin-right: 10%;
   }
 }

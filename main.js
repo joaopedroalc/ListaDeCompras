@@ -159,8 +159,10 @@ function addProductToCart(label) {
 
   let content = `
   <span class="adicionado">${label}</span>
-  <input type="number" name="numero" min="0" max="99" class="num" value="1">
-  <ion-icon name="trash-outline" class="lixeira"></ion-icon>
+  <div class="divItem">
+    <ion-icon name="trash-outline" class="lixeira"></ion-icon>
+    <input type="number" name="numero" min="0" max="99" class="num" value="1">
+  </div>
   `
 
   checkBoxs.forEach((checkbox) => {
@@ -181,7 +183,8 @@ function removeCartItem(event) {
   let r = confirm("Tem certeza ? Se você remover esse item não poderá adiciona-lô novamente!");
   if (r == true) {
     let buttonClicked = event.target;
-    buttonClicked.parentElement.remove()
+    const divItem = buttonClicked.parentElement;
+    divItem.parentElement.remove()
   }
 }
 
