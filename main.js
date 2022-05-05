@@ -160,7 +160,7 @@ function addProductToCart(label) {
   let content = `
   <span class="adicionado">${label}</span>
   <input type="number" name="numero" min="0" max="99" class="num" value="1">
-  <img src="/assets/lixeira.png" class="lixeira"/>
+  <ion-icon name="trash-outline" class="lixeira"></ion-icon>
   `
 
   checkBoxs.forEach((checkbox) => {
